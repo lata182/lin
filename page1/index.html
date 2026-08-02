@@ -53,7 +53,7 @@
 
 <script>
     // Block if already completed
-    if(localStorage.getItem('page1Complete') === 'true'){
+    if(sessionStorage.getItem('page1Done')){
         window.location.href = '../page2/';
     }
 
