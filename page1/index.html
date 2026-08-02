@@ -25,7 +25,6 @@
         .comparison-table td{border:1px solid #ddd;padding:8px}
         .comparison-table tr:nth-child(even){background:#f9f9f9}
         .button-section{text-align:center;padding:15px 0}
-        .perma-hide{display:none!important}
     </style>
 </head>
 <body>
@@ -35,7 +34,7 @@
     <div id="robotSection">
         <div class="button-section">
             <div class="ad-space">📢 Banner Ad - Paste Code Here</div>
-            <button class="green-btn" id="robotBtn" onclick="showWait()">I'm not a robot</button>
+            <button class="green-btn" id="robotBtn" style="display:none;" onclick="showWait()">I'm not a robot</button>
             <div class="ad-space">📢 Banner Ad - Paste Code Here</div>
         </div>
         <div class="content-section" id="articleTop"></div>
@@ -56,18 +55,6 @@
 <script>
 history.pushState(null, '', location.href);
 window.onpopstate = function(){ history.go(1); };
-
-if(sessionStorage.getItem('page1Done')){
-    window.location.replace('../page2/');
-}
-if(localStorage.getItem('robotClicked')){
-    document.getElementById('robotBtn').classList.add('perma-hide');
-    document.getElementById('waitSection').style.display = 'block';
-    if(localStorage.getItem('page1ContinueShow')){
-        document.getElementById('waitText').style.display = 'none';
-        document.getElementById('continueBtn').style.display = 'inline-block';
-    }
-}
 
 var article = `
     <h2>Mutual Funds vs Fixed Deposits: Which is Better in 2025?</h2>
@@ -92,22 +79,16 @@ var article = `
 document.getElementById('articleTop').innerHTML = article;
 document.getElementById('articleBottom').innerHTML = article;
 
-// Show robot button if not hidden permanently
-if(!localStorage.getItem('robotClicked')){
-    setTimeout(function(){
-        document.getElementById('robotBtn').style.display = 'inline-block';
-    }, 4000);
-}
+setTimeout(function(){
+    document.getElementById('robotBtn').style.display = 'inline-block';
+}, 4000);
 
 function showWait(){
-    localStorage.setItem('robotClicked', 'true');
-    document.getElementById('robotBtn').classList.add('perma-hide');
     document.getElementById('waitSection').style.display = 'block';
     document.getElementById('waitSection').scrollIntoView({behavior:'smooth'});
     setTimeout(function(){
         document.getElementById('waitText').style.display = 'none';
         document.getElementById('continueBtn').style.display = 'inline-block';
-        localStorage.setItem('page1ContinueShow', 'true');
     }, 8000);
 }
 
