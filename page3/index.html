@@ -20,7 +20,6 @@
         .content-section p{margin:15px 0;color:#444;font-size:14px}
         .highlight-box{background:#E8F5E9;padding:15px;border-radius:8px;margin:20px 0;border-left:4px solid #4CAF50}
         .button-section{text-align:center;padding:15px 0}
-        .perma-hide{display:none!important}
     </style>
 </head>
 <body>
@@ -39,7 +38,7 @@
     <div id="linkSection" style="display:none;">
         <div class="button-section">
             <div class="ad-space">📢 Video Ad - Paste VAST Code Here</div>
-            <a href="https://telegram.me/+aNyBbN3u7IBiYmE1" class="green-btn" id="finalLink" target="_blank" onclick="hideFinalLink()">get your link 🥰</a>
+            <a href="https://t.me/YourBot" class="green-btn" target="_blank">get your link 🥰</a>
             <div class="ad-space">📢 Video Ad - Paste VAST Code Here</div>
         </div>
         <div class="content-section" id="articleBottom"></div>
@@ -53,13 +52,6 @@ window.onpopstate = function(){ history.go(1); };
 
 if(sessionStorage.getItem('page2Done') !== 'true'){
     window.location.replace('../page2/');
-}
-if(localStorage.getItem('page3LinkShown')){
-    document.getElementById('genSection').style.display = 'none';
-    document.getElementById('linkSection').style.display = 'block';
-    if(localStorage.getItem('page3LinkClicked')){
-        document.getElementById('finalLink').classList.add('perma-hide');
-    }
 }
 
 var article = `
@@ -81,18 +73,10 @@ var article = `
 document.getElementById('articleTop').innerHTML = article;
 document.getElementById('articleBottom').innerHTML = article;
 
-if(!localStorage.getItem('page3LinkShown')){
-    setTimeout(function(){
-        document.getElementById('genSection').style.display = 'none';
-        document.getElementById('linkSection').style.display = 'block';
-        localStorage.setItem('page3LinkShown', 'true');
-    }, 12000);
-}
-
-function hideFinalLink(){
-    localStorage.setItem('page3LinkClicked', 'true');
-    document.getElementById('finalLink').classList.add('perma-hide');
-}
+setTimeout(function(){
+    document.getElementById('genSection').style.display = 'none';
+    document.getElementById('linkSection').style.display = 'block';
+}, 12000);
 </script>
 
 </body>
