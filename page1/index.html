@@ -2,28 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutual Funds vs FD - Complete Guide 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mutual Funds vs FD - Complete Guide 2025</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial,sans-serif;background:#f5f5f5;padding:20px}
-        .container{max-width:700px;width:100%;background:white;padding:40px 30px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);margin:0 auto}
+        html,body{width:100%;overflow-x:hidden;background:#f5f5f5}
+        body{font-family:Arial,sans-serif;padding:0}
+        .container{max-width:100%;width:100%;background:white;padding:25px 15px;margin:0 auto}
         .green-btn{display:inline-block;padding:14px 35px;background:#4CAF50;border:none;color:white;font-size:16px;border-radius:4px;cursor:pointer;text-decoration:none}
-        .ad-space{background:#f9f9f9;border:1px dashed #ddd;padding:15px 10px;margin:25px 0;min-height:100px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;border-radius:5px}
+        .ad-space{background:#f9f9f9;border:1px dashed #ddd;padding:15px 10px;margin:20px 0;min-height:100px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;border-radius:5px}
         .wait-text{font-size:16px;color:#4CAF50;margin:20px 0;text-align:center}
-        .content-section{text-align:left;margin:30px 0;line-height:1.8}
-        .content-section h2{color:#2E7D32;font-size:24px;margin-bottom:15px}
-        .content-section h3{color:#333;font-size:20px;margin:25px 0 10px}
-        .content-section ul{margin:10px 0 20px 20px}
-        .content-section li{margin:8px 0;color:#444;font-size:15px}
-        .content-section p{margin:15px 0;color:#444;font-size:15px}
-        .content-section img{max-width:100%;height:auto;border-radius:8px;margin:20px 0;border:1px solid #eee}
-        .highlight-box{background:#E8F5E9;padding:20px;border-radius:8px;margin:25px 0;border-left:4px solid #4CAF50}
-        .comparison-table{width:100%;border-collapse:collapse;margin:20px 0}
-        .comparison-table th{background:#4CAF50;color:white;padding:12px;text-align:left}
-        .comparison-table td{border:1px solid #ddd;padding:10px}
+        .content-section{text-align:left;margin:25px 0;line-height:1.8;word-wrap:break-word}
+        .content-section h2{color:#2E7D32;font-size:22px;margin-bottom:15px}
+        .content-section h3{color:#333;font-size:18px;margin:20px 0 10px}
+        .content-section ul{margin:10px 0 20px 15px}
+        .content-section li{margin:8px 0;color:#444;font-size:14px}
+        .content-section p{margin:15px 0;color:#444;font-size:14px}
+        .content-section img{max-width:100%;height:auto;border-radius:8px;margin:15px 0}
+        .highlight-box{background:#E8F5E9;padding:15px;border-radius:8px;margin:20px 0;border-left:4px solid #4CAF50}
+        .comparison-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:13px}
+        .comparison-table th{background:#4CAF50;color:white;padding:10px;text-align:left}
+        .comparison-table td{border:1px solid #ddd;padding:8px}
         .comparison-table tr:nth-child(even){background:#f9f9f9}
-        .button-section{text-align:center;padding:20px 0}
+        .button-section{text-align:center;padding:15px 0}
+        .perma-hide{display:none!important}
     </style>
 </head>
 <body>
@@ -33,7 +35,7 @@
     <div id="robotSection">
         <div class="button-section">
             <div class="ad-space">📢 Banner Ad - Paste Code Here</div>
-            <button class="green-btn" id="robotBtn" style="display:none;" onclick="showWait()">I'm not a robot</button>
+            <button class="green-btn" id="robotBtn" onclick="showWait()">I'm not a robot</button>
             <div class="ad-space">📢 Banner Ad - Paste Code Here</div>
         </div>
         <div class="content-section" id="articleTop"></div>
@@ -52,59 +54,67 @@
 </div>
 
 <script>
-    // Block if already completed
-    if(sessionStorage.getItem('page1Done')){
-        window.location.replace('../page2/');
+history.pushState(null, '', location.href);
+window.onpopstate = function(){ history.go(1); };
+
+if(sessionStorage.getItem('page1Done')){
+    window.location.replace('../page2/');
+}
+if(localStorage.getItem('robotClicked')){
+    document.getElementById('robotBtn').classList.add('perma-hide');
+    document.getElementById('waitSection').style.display = 'block';
+    if(localStorage.getItem('page1ContinueShow')){
+        document.getElementById('waitText').style.display = 'none';
+        document.getElementById('continueBtn').style.display = 'inline-block';
     }
+}
 
-    var article = `
-        <h2>Mutual Funds vs Fixed Deposits: Which is Better in 2025?</h2>
-        <p>When it comes to investing in India, two options dominate every discussion - Mutual Funds and Fixed Deposits. While FDs have been the trusted choice for generations, Mutual Funds are gaining popularity among new-age investors.</p>
-        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600" alt="Investment">
-        <h3>What is a Fixed Deposit?</h3>
-        <p>A Fixed Deposit (FD) is a financial instrument offered by banks and NBFCs where you deposit a lump sum amount for a fixed tenure at a predetermined interest rate.</p>
-        <ul><li>Guaranteed returns with no market risk</li><li>Interest rates: 5% to 7.5%</li><li>Tenure: 7 days to 10 years</li><li>Senior citizens get extra 0.25%-0.50%</li><li>Premature withdrawal with penalty</li><li>Taxable as per income slab</li><li>DICGC insurance up to ₹5 lakh</li></ul>
-        <h3>What is a Mutual Fund?</h3>
-        <p>A Mutual Fund pools money from investors and invests in stocks, bonds, and securities. Managed by SEBI-registered professionals.</p>
-        <ul><li>Returns: 8% to 15% (market-linked)</li><li>SIP from ₹500/month</li><li>LTCG tax: 10% above ₹1 Lakh</li><li>Multiple categories available</li></ul>
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Growth">
-        <h3>Key Differences</h3>
-        <table class="comparison-table">
-            <tr><th>Parameter</th><th>Fixed Deposit</th><th>Mutual Fund</th></tr>
-            <tr><td>Returns</td><td>5%-7.5%</td><td>8%-15%</td></tr>
-            <tr><td>Risk</td><td>Very Low</td><td>Low to High</td></tr>
-            <tr><td>Tax</td><td>Income slab</td><td>10% LTCG</td></tr>
-            <tr><td>Min Investment</td><td>₹1,000</td><td>₹500 SIP</td></tr>
-        </table>
-        <div class="highlight-box"><h3>📊 Example: ₹1 Lakh for 5 Years</h3><ul><li>FD at 6.5% = ₹1,37,000</li><li>MF at 12% = ₹1,76,000</li><li><strong>Difference: ₹39,000!</strong></li></ul></div>
-        <h3>Conclusion</h3>
-        <p>FDs for safety, Mutual Funds for growth. Smart investors use both!</p>
-    `;
+var article = `
+    <h2>Mutual Funds vs Fixed Deposits: Which is Better in 2025?</h2>
+    <p>When it comes to investing in India, two options dominate every discussion - Mutual Funds and Fixed Deposits. While FDs have been the trusted choice for generations, Mutual Funds are gaining popularity among new-age investors. But which one is right for you? Let's break it down with detailed analysis, real examples, and expert insights.</p>
+    <p>The investment landscape in India has changed dramatically over the past decade. With inflation averaging 5-6% annually, traditional savings methods are struggling to keep pace. This comprehensive guide will help you understand both options and make an informed decision based on your financial goals.</p>
+    <p>In recent years, we have seen a massive shift in investor behavior. Young professionals in tier-1 and tier-2 cities are increasingly choosing mutual funds over traditional fixed deposits. The rise of fintech apps has made investing accessible to everyone with a smartphone.</p>
+    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600" alt="Investment Comparison">
+    <h3>What is a Fixed Deposit?</h3>
+    <p>A Fixed Deposit (FD) is a financial instrument offered by banks and NBFCs where you deposit a lump sum amount for a fixed tenure at a predetermined interest rate. It is considered one of the safest investment options in India.</p>
+    <ul><li>Bank or NBFC offers guaranteed returns with no market risk</li><li>Interest rates: 5% to 7.5% (varies by bank and tenure)</li><li>Tenure options: 7 days to 10 years</li><li>Senior citizens get additional 0.25% to 0.50% interest</li><li>Premature withdrawal allowed with 0.5% to 1% penalty</li><li>Returns taxable as per income slab</li><li>TDS deducted if interest exceeds ₹40,000 (₹50,000 for seniors)</li><li>DICGC insurance up to ₹5 lakh per bank</li></ul>
+    <h3>What is a Mutual Fund?</h3>
+    <p>A Mutual Fund is a trust that pools money from multiple investors and invests in stocks, bonds, and other securities. Professional fund managers handle the investments based on the fund's objectives.</p>
+    <ul><li>Money pooled from investors in diversified portfolio</li><li>Managed by SEBI-registered professional fund managers</li><li>Historical returns: 8% to 15% (market-linked)</li><li>Multiple categories: Equity, Debt, Hybrid, ELSS, Index funds</li><li>No fixed lock-in (except ELSS - 3 years)</li><li>LTCG tax: 10% on gains above ₹1 Lakh</li><li>SIP option from just ₹500 per month</li></ul>
+    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Financial Growth">
+    <h3>Key Differences at a Glance</h3>
+    <table class="comparison-table"><tr><th>Parameter</th><th>Fixed Deposit</th><th>Mutual Fund</th></tr><tr><td>Returns</td><td>5% - 7.5% guaranteed</td><td>8% - 15% market-linked</td></tr><tr><td>Risk</td><td>Very Low</td><td>Low to High</td></tr><tr><td>Liquidity</td><td>High (with penalty)</td><td>High (no penalty)</td></tr><tr><td>Taxation</td><td>As per income slab</td><td>10% LTCG above ₹1L</td></tr><tr><td>Inflation Protection</td><td>Poor</td><td>Good to Excellent</td></tr><tr><td>Min Investment</td><td>₹1,000</td><td>₹500 (SIP)</td></tr><tr><td>Insurance</td><td>₹5 Lakh (DICGC)</td><td>None</td></tr></table>
+    <div class="highlight-box"><h3>📊 Real Example: ₹1 Lakh Over 5 Years</h3><ul><li>FD at 6.5% = ₹1,37,000</li><li>Mutual Fund at 12% = ₹1,76,000</li><li><strong>Difference: ₹39,000!</strong></li></ul></div>
+    <h3>Conclusion</h3>
+    <p>Both Fixed Deposits and Mutual Funds have their place. FDs for safety and short-term, Mutual Funds for growth and long-term wealth creation. Smart investors use both strategically!</p>
+`;
 
-    document.getElementById('articleTop').innerHTML = article;
-    document.getElementById('articleBottom').innerHTML = article;
+document.getElementById('articleTop').innerHTML = article;
+document.getElementById('articleBottom').innerHTML = article;
 
+// Show robot button if not hidden permanently
+if(!localStorage.getItem('robotClicked')){
     setTimeout(function(){
         document.getElementById('robotBtn').style.display = 'inline-block';
     }, 4000);
+}
 
-    function showWait(){
-        document.getElementById('waitSection').style.display = 'block';
-        document.getElementById('waitSection').scrollIntoView({behavior:'smooth'});
-        setTimeout(function(){
-            document.getElementById('waitText').style.display = 'none';
-            document.getElementById('continueBtn').style.display = 'inline-block';
-        }, 8000);
-    }
+function showWait(){
+    localStorage.setItem('robotClicked', 'true');
+    document.getElementById('robotBtn').classList.add('perma-hide');
+    document.getElementById('waitSection').style.display = 'block';
+    document.getElementById('waitSection').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){
+        document.getElementById('waitText').style.display = 'none';
+        document.getElementById('continueBtn').style.display = 'inline-block';
+        localStorage.setItem('page1ContinueShow', 'true');
+    }, 8000);
+}
 
-    function goToPage2(){
-        sessionStorage.setItem('page1Done', 'true');
-        window.location.href = '../page2/';
-    }
-    history.pushState(null, '', window.location.href);
-window.addEventListener('popstate', function(){
-    history.pushState(null, '', window.location.href);
-});
+function goToPage2(){
+    sessionStorage.setItem('page1Done', 'true');
+    window.location.replace('../page2/');
+}
 </script>
 
 </body>
