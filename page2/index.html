@@ -21,7 +21,6 @@
         .content-section img{max-width:100%;height:auto;border-radius:8px;margin:15px 0}
         .highlight-box{background:#E8F5E9;padding:15px;border-radius:8px;margin:20px 0;border-left:4px solid #4CAF50}
         .button-section{text-align:center;padding:15px 0}
-        .perma-hide{display:none!important}
     </style>
 </head>
 <body>
@@ -31,7 +30,7 @@
     <div id="verifySection">
         <div class="button-section">
             <div class="ad-space">📢 Banner Ad - Paste Code Here</div>
-            <button class="green-btn" id="verifyBtn" onclick="showWait()">click here to verify</button>
+            <button class="green-btn" id="verifyBtn" style="display:none;" onclick="showWait()">click here to verify</button>
             <div class="ad-space">📢 Banner Ad - Paste Code Here</div>
         </div>
         <div class="content-section" id="articleTop"></div>
@@ -56,17 +55,6 @@ window.onpopstate = function(){ history.go(1); };
 if(sessionStorage.getItem('page1Done') !== 'true'){
     window.location.replace('../page1/');
 }
-if(sessionStorage.getItem('page2Done')){
-    window.location.replace('../page3/');
-}
-if(localStorage.getItem('page2VerifyClicked')){
-    document.getElementById('verifyBtn').classList.add('perma-hide');
-    document.getElementById('waitSection').style.display = 'block';
-    if(localStorage.getItem('page2ContinueShow')){
-        document.getElementById('waitText').style.display = 'none';
-        document.getElementById('continueBtn').style.display = 'inline-block';
-    }
-}
 
 var article = `
     <h2>Why Mutual Funds Are Gaining Popularity in India</h2>
@@ -90,21 +78,16 @@ var article = `
 document.getElementById('articleTop').innerHTML = article;
 document.getElementById('articleBottom').innerHTML = article;
 
-if(!localStorage.getItem('page2VerifyClicked')){
-    setTimeout(function(){
-        document.getElementById('verifyBtn').style.display = 'inline-block';
-    }, 4000);
-}
+setTimeout(function(){
+    document.getElementById('verifyBtn').style.display = 'inline-block';
+}, 4000);
 
 function showWait(){
-    localStorage.setItem('page2VerifyClicked', 'true');
-    document.getElementById('verifyBtn').classList.add('perma-hide');
     document.getElementById('waitSection').style.display = 'block';
     document.getElementById('waitSection').scrollIntoView({behavior:'smooth'});
     setTimeout(function(){
         document.getElementById('waitText').style.display = 'none';
         document.getElementById('continueBtn').style.display = 'inline-block';
-        localStorage.setItem('page2ContinueShow', 'true');
     }, 10000);
 }
 
