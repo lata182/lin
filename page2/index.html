@@ -94,6 +94,10 @@
         sessionStorage.setItem('page2Done', 'true');
         window.location.href = '../page3/';
     }
+        history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', function(){
+        history.pushState(null, '', window.location.href);
+    });
 </script>
 
 </body>
