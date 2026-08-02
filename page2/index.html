@@ -48,10 +48,10 @@
 </div>
 
 <script>
-    if(localStorage.getItem('page1Complete') !== 'true'){
+    if(sessionStorage.getItem('page1Done') !== 'true'){
         window.location.href = '../page1/';
     }
-    if(localStorage.getItem('page2Complete') === 'true'){
+    if(sessionStorage.getItem('page2Done') === 'true'){
         window.location.href = '../page3/';
     }
 
