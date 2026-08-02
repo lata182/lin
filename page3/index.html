@@ -79,6 +79,10 @@
             document.getElementById('linkSection').style.display = 'block';
         }
     }, 12000);
+        history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', function(){
+        history.pushState(null, '', window.location.href);
+    });
 </script>
 
 </body>
