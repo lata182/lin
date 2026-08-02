@@ -46,10 +46,10 @@
 </div>
 
 <script>
-    if(localStorage.getItem('page2Complete') !== 'true'){
+    if(sessionStorage.getItem('page2Done') !== 'true'){
         window.location.href = '../page2/';
     }
-    if(localStorage.getItem('page3Complete') === 'true'){
+    if(sessionStorage.getItem('page3Done')){
         document.getElementById('genSection').style.display = 'none';
         document.getElementById('linkSection').style.display = 'block';
     }
