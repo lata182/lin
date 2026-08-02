@@ -74,7 +74,7 @@
     document.getElementById('articleBottom').innerHTML = article;
 
     setTimeout(function(){
-        if(localStorage.getItem('page3Complete') !== 'true'){
+        if(sessionStorage.getItem('page3Done') !== 'true'){
             document.getElementById('genSection').style.display = 'none';
             document.getElementById('linkSection').style.display = 'block';
         }
