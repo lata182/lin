@@ -2,51 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Download - Ready! 🎉</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-        html,body{width:100%;overflow-x:hidden;background:#0f0f1e;color:#fff;min-height:100vh}
-        .container{max-width:100%;width:100%;padding:15px;margin:0 auto}
-        .progress-wrap{background:#1a1a2e;padding:15px;border-radius:10px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-        .progress-text{text-align:center;color:#4ade80;font-size:14px;margin-bottom:8px;font-weight:600}
-        .progress-bar{width:100%;height:8px;background:#2a2a3e;border-radius:10px;overflow:hidden}
-        .progress-fill{width:100%;height:100%;background:linear-gradient(90deg,#4ade80,#22c55e);border-radius:10px;box-shadow:0 0 15px #4ade80}
-        .card{background:#1a1a2e;padding:20px 15px;border-radius:15px;margin-bottom:15px;box-shadow:0 4px 20px rgba(0,0,0,0.3);border:1px solid #2a2a3e}
-        .btn-real{display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#4ade80,#22c55e);border:none;color:white;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;margin:8px 5px;box-shadow:0 4px 15px rgba(74,222,128,0.4);animation:pulse 2s infinite}
-        .btn-fake{display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border:none;color:white;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;margin:8px 5px;box-shadow:0 4px 15px rgba(139,92,246,0.4)}
+        html,body{width:100%;min-height:100vh;overflow-x:hidden;background:#f0f4f8;color:#1e293b}
+        .container{width:100%;max-width:100%;padding:12px;margin:0 auto}
+        .progress-wrap{background:#fff;padding:15px;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+        .progress-text{text-align:center;color:#059669;font-size:14px;margin-bottom:8px;font-weight:600}
+        .progress-bar{width:100%;height:8px;background:#e2e8f0;border-radius:10px;overflow:hidden}
+        .progress-fill{width:100%;height:100%;background:linear-gradient(90deg,#10b981,#059669);border-radius:10px;box-shadow:0 0 10px rgba(16,185,129,0.3)}
+        .card{background:#fff;padding:18px 12px;border-radius:15px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);border:1px solid #e2e8f0}
+        .btn-real{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#10b981,#059669);border:none;color:white;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;margin:8px 5px;box-shadow:0 4px 15px rgba(16,185,129,0.4);animation:pulse 2s infinite}
+        .btn-fake{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border:none;color:white;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;margin:8px 5px;box-shadow:0 4px 15px rgba(139,92,246,0.4)}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-        .countdown{font-size:48px;font-weight:800;color:#4ade80;text-align:center;margin:15px 0;text-shadow:0 0 20px rgba(74,222,128,0.5)}
-        .wait-text{font-size:15px;color:#94a3b8;text-align:center;margin:10px 0}
-        .content-box{margin:12px 0;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center;background:#0f0f1e;padding:10px;border-radius:8px;flex-wrap:wrap}
-        .loader{border:3px solid #2a2a3e;border-top:3px solid #4ade80;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:15px auto}
-        @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .countdown{font-size:52px;font-weight:800;color:#059669;text-align:center;margin:12px 0;text-shadow:0 2px 10px rgba(16,185,129,0.2)}
+        .wait-text{font-size:15px;color:#64748b;text-align:center;margin:8px 0;font-weight:500}
+        .ad-box{margin:12px 0;min-height:60px;display:flex;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap;overflow:hidden;width:100%}
+        .loader{border:3px solid #e2e8f0;border-top:3px solid #10b981;border-radius:50%;width:38px;height:38px;animation:spin 1s linear infinite;margin:12px auto}
+        @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
         .success-icon{font-size:60px;text-align:center;margin:10px 0;animation:bounce 1s infinite}
         @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-        .trust-row{display:flex;justify-content:space-around;flex-wrap:wrap;margin:15px 0;padding:12px;background:#0f0f1e;border-radius:10px}
-        .trust-item{text-align:center;padding:5px;color:#94a3b8;font-size:12px}
-        .trust-item strong{display:block;color:#4ade80;font-size:16px;margin-bottom:3px}
-        .content-section{padding:15px;background:#1a1a2e;border-radius:12px;margin-top:15px}
-        .content-section h2{color:#4ade80;font-size:20px;margin-bottom:12px}
-        .content-section h3{color:#fbbf24;font-size:16px;margin:15px 0 8px}
-        .content-section p{color:#cbd5e1;font-size:14px;line-height:1.7;margin:10px 0}
+        .trust-row{display:flex;justify-content:space-around;flex-wrap:wrap;margin:12px 0;padding:12px;background:#f1f5f9;border-radius:10px}
+        .trust-item{text-align:center;padding:5px;color:#64748b;font-size:12px}
+        .trust-item strong{display:block;color:#059669;font-size:16px;margin-bottom:3px}
+        .content-section{padding:15px;background:#fff;border-radius:12px;margin-top:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .content-section h2{color:#059669;font-size:20px;margin-bottom:12px}
+        .content-section h3{color:#d97706;font-size:16px;margin:15px 0 8px}
+        .content-section p{color:#475569;font-size:14px;line-height:1.7;margin:10px 0}
         .content-section ul{margin:10px 0 15px 20px}
-        .content-section li{color:#cbd5e1;font-size:13px;margin:6px 0}
+        .content-section li{color:#475569;font-size:13px;margin:6px 0}
         .content-section img{max-width:100%;border-radius:8px;margin:12px 0}
-        .info-box{background:#0f0f1e;padding:12px;border-radius:8px;margin:12px 0;border-left:3px solid #4ade80}
-        .info-box h4{color:#4ade80;font-size:14px;margin-bottom:5px}
-        .btn-center{text-align:center;padding:10px 0}
-        .btn-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+        .info-box{background:#ecfdf5;padding:12px;border-radius:8px;margin:12px 0;border-left:3px solid #10b981}
+        .info-box h4{color:#059669;font-size:14px;margin-bottom:5px}
+        .btn-center{text-align:center;padding:12px 0}
+        .btn-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+        iframe{max-width:100%}
     </style>
 
-    <!-- SOCIAL BAR - Delayed -->
-    <script>
-    setTimeout(function(){
-        var sb = document.createElement('script');
-        sb.src = 'https://thinkscomparewindow.com/d1/92/11/d192112f6fc8bc1bf77ad7110a7ba038.js';
-        document.head.appendChild(sb);
-    }, 2000);
-    </script>
+    <!-- SOCIAL BAR -->
+    <script src="https://thinkscomparewindow.com/d1/92/11/d192112f6fc8bc1bf77ad7110a7ba038.js"></script>
 
 </head>
 <body>
@@ -54,10 +49,11 @@
 <div class="container">
 
     <div class="progress-wrap">
-        <div class="progress-text">🎉 Step 3 of 3 - Almost Done!</div>
+        <div class="progress-text">🎉 Step 3 of 3 - Final Step!</div>
         <div class="progress-bar"><div class="progress-fill"></div></div>
     </div>
 
+    <!-- SECTION 1: Generating -->
     <div id="genSection">
 
         <div class="card">
@@ -67,21 +63,79 @@
                 <div class="trust-item"><strong>3</strong>⏳ Preparing</div>
             </div>
 
-            <div class="content-box" id="ad-slot-1"></div>
+            <!-- AD: 320x50 -->
+            <div class="ad-box">
+                <script type="text/javascript">
+                  atOptions = {
+                    'key' : 'a1d0de16e9e5dc1dc7f7384354faa4bf',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://thinkscomparewindow.com/a1d0de16e9e5dc1dc7f7384354faa4bf/invoke.js"></script>
+            </div>
 
+            <!-- AD: 300x250 -->
+            <div class="ad-box">
+                <script type="text/javascript">
+                  atOptions = {
+                    'key' : '0359ebfe40ad3d71e104d0c01c5a9b24',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
+            </div>
+
+            <!-- AD: NATIVE -->
+            <div class="ad-box">
+                <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
+                <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
+            </div>
+
+            <!-- COUNTDOWN -->
             <div class="btn-center">
-                <div class="countdown" id="countdown">12</div>
+                <div class="countdown" id="countdown">8</div>
                 <p class="wait-text">🎬 Generating your download link...</p>
                 <div class="loader"></div>
             </div>
 
-            <div class="content-box" id="ad-slot-2"></div>
-            <div class="content-box" id="ad-slot-3"></div>
+            <!-- AD: 468x60 -->
+            <div class="ad-box">
+                <script type="text/javascript">
+                  atOptions = {
+                    'key' : 'b905cee804c394ace8e4f8605a0d6598',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://thinkscomparewindow.com/b905cee804c394ace8e4f8605a0d6598/invoke.js"></script>
+            </div>
+
+            <!-- AD: 728x90 -->
+            <div class="ad-box">
+                <script type="text/javascript">
+                  atOptions = {
+                    'key' : '5418615f594b87eb6a064974250410f2',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://thinkscomparewindow.com/5418615f594b87eb6a064974250410f2/invoke.js"></script>
+            </div>
         </div>
 
         <div class="content-section">
-            <h2>🎥 Your Movie Almost Ready!</h2>
-            <p>We're preparing the best quality download link for you. Just a few seconds!</p>
+            <h2>🎥 Your Movie is Almost Ready!</h2>
+            <p>We're preparing the best quality download link for you. This will just take a few seconds. Your patience is appreciated!</p>
             <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600" alt="Movie">
 
             <h3>📥 What You'll Get</h3>
@@ -90,46 +144,74 @@
                 <li><strong>Fast Download:</strong> Max speed servers</li>
                 <li><strong>Direct Link:</strong> No survey required</li>
                 <li><strong>All Formats:</strong> MP4, MKV available</li>
-                <li><strong>Multi Audio:</strong> Hindi + English</li>
+                <li><strong>Multiple Audio:</strong> Hindi + English tracks</li>
             </ul>
 
             <div class="info-box">
                 <h4>💡 While You Wait</h4>
-                <p>Join our Telegram channel for latest updates!</p>
+                <p>Join our Telegram channel for latest movie updates, requests and exclusive content!</p>
             </div>
+
+            <h3>⭐ Recent Downloads</h3>
+            <ul>
+                <li>Latest Bollywood blockbuster</li>
+                <li>Marvel superhero movie</li>
+                <li>Popular Netflix series</li>
+                <li>South Indian action film</li>
+            </ul>
         </div>
     </div>
 
+    <!-- SECTION 2: Link Ready -->
     <div id="linkSection" style="display:none">
 
         <div class="card">
             <div class="success-icon">🎉</div>
-            <p class="wait-text" style="color:#4ade80;font-size:18px;font-weight:700;margin-bottom:15px">Your Link is Ready!</p>
+            <p class="wait-text" style="color:#059669;font-size:18px;font-weight:700;margin-bottom:15px">Your Link is Ready!</p>
 
-            <div class="content-box" id="ad-slot-4"></div>
+            <div class="ad-box">
+                <iframe id="lAd1" style="border:0;width:320px;height:60px"></iframe>
+            </div>
 
+            <div class="ad-box">
+                <iframe id="lAd2" style="border:0;width:300px;height:260px"></iframe>
+            </div>
+
+            <div class="ad-box">
+                <iframe id="lAd3" style="border:0;width:100%;max-width:100%;height:260px"></iframe>
+            </div>
+
+            <!-- BUTTONS -->
             <div class="btn-center">
-                <p class="wait-text" style="color:#94a3b8;font-size:13px;margin-bottom:12px">Choose your download quality:</p>
+                <p class="wait-text" style="color:#64748b;font-size:13px;margin-bottom:10px">Choose your download speed:</p>
                 <div class="btn-row">
                     <button class="btn-fake" onclick="fakeClick()">⚡ HD Quality (Fast)</button>
                 </div>
-                <div class="btn-row" style="margin-top:8px">
+                <div class="btn-row">
                     <a href="#" class="btn-real" onclick="openLink(event)">📥 Get Download Link</a>
                 </div>
             </div>
 
-            <div class="content-box" id="ad-slot-5"></div>
-            <div class="content-box" id="ad-slot-6"></div>
-            <div class="content-box" id="ad-slot-7"></div>
+            <div class="ad-box">
+                <iframe id="lAd4" style="border:0;width:468px;max-width:100%;height:70px"></iframe>
+            </div>
+
+            <div class="ad-box">
+                <iframe id="lAd5" style="border:0;width:728px;max-width:100%;height:100px"></iframe>
+            </div>
+
+            <div class="ad-box">
+                <iframe id="lAd6" style="border:0;width:160px;height:600px"></iframe>
+            </div>
         </div>
 
         <div class="content-section">
             <h3>🎬 Enjoy Your Movie!</h3>
-            <p>Your download link is ready. Click the green button above.</p>
+            <p>Your download link is ready above. Click the green button to get your movie link instantly.</p>
 
             <div class="info-box">
                 <h4>📱 Share with Friends</h4>
-                <p>Loved our service? Share our Telegram channel!</p>
+                <p>Loved our service? Share our Telegram channel with your friends and get access to premium content!</p>
             </div>
 
             <h3>⚡ Watch Instructions</h3>
@@ -137,12 +219,15 @@
                 <li>Use MX Player or VLC for best experience</li>
                 <li>Enable subtitles if needed</li>
                 <li>Watch in HD mode for full quality</li>
-                <li>Cast to TV for big screen</li>
+                <li>Connect to TV via cast for big screen</li>
             </ul>
+
+            <h3>🎁 More Movies?</h3>
+            <p>Visit our Telegram channel for thousands of movies, web series, and daily updates. Everything free forever!</p>
 
             <div class="info-box">
                 <h4>💬 Support</h4>
-                <p>Any issue? Message us on Telegram!</p>
+                <p>Any issue? Message us on Telegram. We reply within 5 minutes!</p>
             </div>
         </div>
     </div>
@@ -157,34 +242,8 @@ if(sessionStorage.getItem('page2Done') !== 'true'){
     window.location.replace('../page2/');
 }
 
-function loadAd(slotId, adCode){
-    setTimeout(function(){
-        var slot = document.getElementById(slotId);
-        if(slot){
-            slot.innerHTML = adCode;
-            var scripts = slot.querySelectorAll('script');
-            scripts.forEach(function(oldScript){
-                var newScript = document.createElement('script');
-                if(oldScript.src){ newScript.src = oldScript.src; }
-                else { newScript.text = oldScript.textContent; }
-                oldScript.parentNode.replaceChild(newScript, oldScript);
-            });
-        }
-    }, 2500);
-}
-
-loadAd('ad-slot-1', `<script type="text/javascript">atOptions={'key':'0359ebfe40ad3d71e104d0c01c5a9b24','format':'iframe','height':250,'width':300,'params':{}};<\/script><script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"><\/script>`);
-loadAd('ad-slot-2', `<script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"><\/script><div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>`);
-loadAd('ad-slot-3', `<script type="text/javascript">atOptions={'key':'a1d0de16e9e5dc1dc7f7384354faa4bf','format':'iframe','height':50,'width':320,'params':{}};<\/script><script src="https://thinkscomparewindow.com/a1d0de16e9e5dc1dc7f7384354faa4bf/invoke.js"><\/script>`);
-
-function loadLinkAds(){
-    loadAd('ad-slot-4', `<script type="text/javascript">atOptions={'key':'0359ebfe40ad3d71e104d0c01c5a9b24','format':'iframe','height':250,'width':300,'params':{}};<\/script><script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"><\/script>`);
-    loadAd('ad-slot-5', `<script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"><\/script><div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>`);
-    loadAd('ad-slot-6', `<script type="text/javascript">atOptions={'key':'b905cee804c394ace8e4f8605a0d6598','format':'iframe','height':60,'width':468,'params':{}};<\/script><script src="https://thinkscomparewindow.com/b905cee804c394ace8e4f8605a0d6598/invoke.js"><\/script>`);
-    loadAd('ad-slot-7', `<script type="text/javascript">atOptions={'key':'61cc7f8338d94e43f4b639b57bb7e0e1','format':'iframe','height':600,'width':160,'params':{}};<\/script><script src="https://thinkscomparewindow.com/61cc7f8338d94e43f4b639b57bb7e0e1/invoke.js"><\/script>`);
-}
-
-var count = 12;
+// Countdown 8 sec
+var count = 8;
 var timer = setInterval(function(){
     count--;
     document.getElementById('countdown').innerText = count;
@@ -196,6 +255,20 @@ var timer = setInterval(function(){
         loadLinkAds();
     }
 }, 1000);
+
+function loadLinkAds(){
+    document.getElementById('lAd1').srcdoc = `<style>body{margin:0;display:flex;justify-content:center;align-items:center}</style><script type="text/javascript">atOptions={'key':'a1d0de16e9e5dc1dc7f7384354faa4bf','format':'iframe','height':50,'width':320,'params':{}};<\/script><script src="https://thinkscomparewindow.com/a1d0de16e9e5dc1dc7f7384354faa4bf/invoke.js"><\/script>`;
+    
+    document.getElementById('lAd2').srcdoc = `<style>body{margin:0;display:flex;justify-content:center;align-items:center}</style><script type="text/javascript">atOptions={'key':'0359ebfe40ad3d71e104d0c01c5a9b24','format':'iframe','height':250,'width':300,'params':{}};<\/script><script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"><\/script>`;
+    
+    document.getElementById('lAd3').srcdoc = `<style>body{margin:0}</style><script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"><\/script><div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>`;
+    
+    document.getElementById('lAd4').srcdoc = `<style>body{margin:0;display:flex;justify-content:center;align-items:center}</style><script type="text/javascript">atOptions={'key':'b905cee804c394ace8e4f8605a0d6598','format':'iframe','height':60,'width':468,'params':{}};<\/script><script src="https://thinkscomparewindow.com/b905cee804c394ace8e4f8605a0d6598/invoke.js"><\/script>`;
+    
+    document.getElementById('lAd5').srcdoc = `<style>body{margin:0;display:flex;justify-content:center;align-items:center}</style><script type="text/javascript">atOptions={'key':'5418615f594b87eb6a064974250410f2','format':'iframe','height':90,'width':728,'params':{}};<\/script><script src="https://thinkscomparewindow.com/5418615f594b87eb6a064974250410f2/invoke.js"><\/script>`;
+    
+    document.getElementById('lAd6').srcdoc = `<style>body{margin:0;display:flex;justify-content:center;align-items:center}</style><script type="text/javascript">atOptions={'key':'61cc7f8338d94e43f4b639b57bb7e0e1','format':'iframe','height':600,'width':160,'params':{}};<\/script><script src="https://thinkscomparewindow.com/61cc7f8338d94e43f4b639b57bb7e0e1/invoke.js"><\/script>`;
+}
 
 function fakeClick(){
     window.open('https://thinkscomparewindow.com/t3hvtigjw?key=c556dd83ba846a18aa5a97344af77336', '_blank');
