@@ -29,8 +29,15 @@
         .button-section{text-align:center;padding:15px 0}
     </style>
 
-    <!-- POPUNDER (only on this page) -->
-    <script src="https://thinkscomparewindow.com/26/da/08/26da0863fa4e7e13583d4080e1b980ab.js"></script>
+    <!-- POPUNDER - 1x only using sessionStorage check -->
+    <script>
+    if(!sessionStorage.getItem('popShown')){
+        sessionStorage.setItem('popShown', 'true');
+        var popScript = document.createElement('script');
+        popScript.src = 'https://thinkscomparewindow.com/26/da/08/26da0863fa4e7e13583d4080e1b980ab.js';
+        document.head.appendChild(popScript);
+    }
+    </script>
 
     <!-- SOCIAL BAR -->
     <script src="https://thinkscomparewindow.com/d1/92/11/d192112f6fc8bc1bf77ad7110a7ba038.js"></script>
@@ -42,48 +49,6 @@
 
     <div id="genSection">
 
-        <div class="content-section">
-            <h2>Final Verdict: Mutual Funds vs Fixed Deposits</h2>
-            <p>After analyzing both investment options in extreme detail across our comprehensive 3-part guide, it becomes crystal clear that both Fixed Deposits and Mutual Funds serve completely different purposes in your financial journey. There is no single "best" option - the right choice depends on your age, risk appetite, goals, and investment horizon.</p>
-            <p>Many financial advisors now recommend a hybrid approach where investors use both instruments strategically. FDs act as the safety net and emergency corpus, while Mutual Funds work as the wealth creation engine.</p>
-            <p>The key learning is that inflation is the silent killer of your wealth. If your investments are not beating the 6% average inflation rate consistently, you're actually losing purchasing power. This is where equity mutual funds become undeniable for long-term wealth creation.</p>
-            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600" alt="Investment Success">
-
-            <div class="highlight-box">
-                <h3>🏆 The Clear Winner?</h3>
-                <p><strong>Long-term wealth (5+ years):</strong> Mutual Funds win<br>
-                <strong>Short-term safety:</strong> Fixed Deposits unbeatable<br>
-                <strong>Best strategy:</strong> Use both intelligently!</p>
-            </div>
-
-            <h3>Complete Asset Allocation by Age</h3>
-            <table class="comparison-table">
-                <tr><th>Age</th><th>Mutual Funds</th><th>Fixed Deposits</th><th>Gold/Others</th></tr>
-                <tr><td>20-30</td><td>75%</td><td>15%</td><td>10%</td></tr>
-                <tr><td>30-40</td><td>65%</td><td>25%</td><td>10%</td></tr>
-                <tr><td>40-50</td><td>55%</td><td>35%</td><td>10%</td></tr>
-                <tr><td>50-60</td><td>35%</td><td>55%</td><td>10%</td></tr>
-                <tr><td>60+</td><td>20%</td><td>70%</td><td>10%</td></tr>
-            </table>
-
-            <h3>Top MF Categories for 2025</h3>
-            <ul>
-                <li><strong>Small Cap:</strong> 18-22% (high risk, 10+ year horizon)</li>
-                <li><strong>Mid Cap:</strong> 15-18% (moderate-high risk)</li>
-                <li><strong>Flexi Cap:</strong> 13-16% (balanced)</li>
-                <li><strong>Large Cap:</strong> 10-12% (stable)</li>
-                <li><strong>Index Funds:</strong> 10-12% (lowest cost)</li>
-                <li><strong>ELSS:</strong> 12-14% (tax + growth)</li>
-                <li><strong>Debt Funds:</strong> 6-8% (better than FD post-tax)</li>
-            </ul>
-
-            <div class="warning-box">
-                <h3>⚠️ Important Disclaimer</h3>
-                <p>All returns are historical averages. Mutual funds are subject to market risks. Past performance doesn't guarantee future results. Consult a SEBI-registered advisor for personalized advice.</p>
-            </div>
-        </div>
-
-        <!-- ADS AROUND GENERATING TEXT -->
         <div class="button-section">
             <!-- BANNER 300x250 -->
             <div class="ad-space">
@@ -99,13 +64,13 @@
                 <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
             </div>
 
+            <p class="gen-text">generating your link...</p>
+
             <!-- NATIVE BANNER -->
             <div class="ad-space">
                 <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
                 <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
             </div>
-
-            <p class="gen-text">generating your link...</p>
 
             <!-- BANNER 320x50 -->
             <div class="ad-space">
@@ -121,63 +86,51 @@
                 <script src="https://thinkscomparewindow.com/a1d0de16e9e5dc1dc7f7384354faa4bf/invoke.js"></script>
             </div>
         </div>
+
+        <div class="content-section">
+            <h2>Final Verdict: MF vs FD</h2>
+            <p>After analyzing both options in detail, it's clear that both Fixed Deposits and Mutual Funds serve different purposes in your financial journey.</p>
+            <p>Financial advisors recommend hybrid approach - FDs as safety net, Mutual Funds as wealth creation engine.</p>
+            <p>Inflation is the silent killer of wealth. If investments don't beat 6% inflation, you're losing purchasing power.</p>
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600" alt="Investment Success">
+
+            <div class="highlight-box">
+                <h3>🏆 The Winner?</h3>
+                <p><strong>Long-term (5+ years):</strong> Mutual Funds<br>
+                <strong>Short-term safety:</strong> Fixed Deposits<br>
+                <strong>Best:</strong> Use both intelligently!</p>
+            </div>
+
+            <h3>Asset Allocation by Age</h3>
+            <table class="comparison-table">
+                <tr><th>Age</th><th>MF</th><th>FD</th><th>Gold</th></tr>
+                <tr><td>20-30</td><td>75%</td><td>15%</td><td>10%</td></tr>
+                <tr><td>30-40</td><td>65%</td><td>25%</td><td>10%</td></tr>
+                <tr><td>40-50</td><td>55%</td><td>35%</td><td>10%</td></tr>
+                <tr><td>50-60</td><td>35%</td><td>55%</td><td>10%</td></tr>
+                <tr><td>60+</td><td>20%</td><td>70%</td><td>10%</td></tr>
+            </table>
+
+            <h3>Top MF Categories 2025</h3>
+            <ul>
+                <li><strong>Small Cap:</strong> 18-22% (high risk)</li>
+                <li><strong>Mid Cap:</strong> 15-18%</li>
+                <li><strong>Flexi Cap:</strong> 13-16%</li>
+                <li><strong>Large Cap:</strong> 10-12% (stable)</li>
+                <li><strong>Index Funds:</strong> 10-12% (low cost)</li>
+                <li><strong>ELSS:</strong> 12-14% (tax + growth)</li>
+                <li><strong>Debt Funds:</strong> 6-8%</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>⚠️ Disclaimer</h3>
+                <p>All returns are historical. Mutual funds subject to market risks. Consult SEBI-registered advisor.</p>
+            </div>
+        </div>
     </div>
 
     <div id="linkSection" style="display:none;">
 
-        <div class="content-section">
-            <h3>Best FD Interest Rates in 2025</h3>
-            <table class="comparison-table">
-                <tr><th>Bank</th><th>Regular</th><th>Senior</th></tr>
-                <tr><td>SBI</td><td>6.50%</td><td>7.00%</td></tr>
-                <tr><td>HDFC Bank</td><td>7.00%</td><td>7.50%</td></tr>
-                <tr><td>ICICI Bank</td><td>7.10%</td><td>7.60%</td></tr>
-                <tr><td>Axis Bank</td><td>7.10%</td><td>7.75%</td></tr>
-                <tr><td>Kotak Bank</td><td>7.10%</td><td>7.60%</td></tr>
-                <tr><td>Small Finance Banks</td><td>Up to 8.50%</td><td>Up to 9.00%</td></tr>
-                <tr><td>Post Office FD</td><td>7.50%</td><td>7.50%</td></tr>
-            </table>
-
-            <div class="tip-box">
-                <h3>💡 Smart Investment Strategy</h3>
-                <p><strong>Emergency Fund:</strong> Keep 6-12 months in FD/Liquid<br>
-                <strong>Short-term (1-3 years):</strong> FD or Debt Funds<br>
-                <strong>Long-term (5+ years):</strong> Equity MF via SIP<br>
-                <strong>Tax Saving:</strong> ELSS<br>
-                <strong>Regular Income:</strong> SWP from Debt/Hybrid<br>
-                <strong>Retirement:</strong> NPS + Equity MF + FD</p>
-            </div>
-
-            <h3>Power of Starting Early</h3>
-            <p>Amit started ₹5,000/month at age 25, Rohit started same at age 35. Both till age 60.</p>
-            <ul>
-                <li><strong>Amit (Started at 25):</strong> Invested ₹21 Lakhs → ₹2.75 Crores</li>
-                <li><strong>Rohit (Started at 35):</strong> Invested ₹15 Lakhs → ₹80 Lakhs</li>
-                <li><strong>Difference:</strong> 10 years delay cost Rohit ₹1.95 CRORES!</li>
-            </ul>
-
-            <h3>Quick Action Steps</h3>
-            <ul>
-                <li><strong>Step 1:</strong> Complete KYC (Aadhaar + PAN, 5 min)</li>
-                <li><strong>Step 2:</strong> Download Groww/Zerodha/Kuvera</li>
-                <li><strong>Step 3:</strong> Start SIP ₹500-1000 in Index Fund</li>
-                <li><strong>Step 4:</strong> Set clear financial goals</li>
-                <li><strong>Step 5:</strong> Step-up SIP 10-15% every year</li>
-                <li><strong>Step 6:</strong> Review yearly, don't panic</li>
-                <li><strong>Step 7:</strong> Keep 6-month emergency in FD</li>
-            </ul>
-
-            <div class="highlight-box">
-                <h3>🎯 Final Wisdom</h3>
-                <p>Wealth creation is a marathon, not a sprint. Start early, stay consistent, let compounding work its magic. The best time to plant a tree was 20 years ago, the second best time is TODAY.</p>
-                <p>Even ₹500/month for 30 years can create ₹35+ lakhs at 12% returns!</p>
-            </div>
-
-            <h3>Final Thoughts</h3>
-            <p>Both FDs and Mutual Funds are excellent tools when used correctly. The smart investor uses both strategically based on goals, risk profile, and time horizon. Goal is sustainable wealth creation, not quick riches. Stay disciplined, stay invested, success will follow!</p>
-        </div>
-
-        <!-- ADS AROUND GET LINK BUTTON -->
         <div class="button-section">
             <!-- BANNER 300x250 -->
             <div class="ad-space">
@@ -193,13 +146,13 @@
                 <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
             </div>
 
+            <a href="#" class="green-btn" id="getLinkBtn" onclick="openLink(event)">get your link 🥰</a>
+
             <!-- NATIVE BANNER -->
             <div class="ad-space">
                 <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
                 <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
             </div>
-
-            <a href="#" class="green-btn" id="getLinkBtn" onclick="openLink(event)">get your link 🥰</a>
 
             <!-- BANNER 468x60 -->
             <div class="ad-space">
@@ -229,6 +182,57 @@
                 <script src="https://thinkscomparewindow.com/61cc7f8338d94e43f4b639b57bb7e0e1/invoke.js"></script>
             </div>
         </div>
+
+        <div class="content-section">
+            <h3>Best FD Rates 2025</h3>
+            <table class="comparison-table">
+                <tr><th>Bank</th><th>Regular</th><th>Senior</th></tr>
+                <tr><td>SBI</td><td>6.50%</td><td>7.00%</td></tr>
+                <tr><td>HDFC</td><td>7.00%</td><td>7.50%</td></tr>
+                <tr><td>ICICI</td><td>7.10%</td><td>7.60%</td></tr>
+                <tr><td>Axis</td><td>7.10%</td><td>7.75%</td></tr>
+                <tr><td>Kotak</td><td>7.10%</td><td>7.60%</td></tr>
+                <tr><td>Small Finance</td><td>Up to 8.50%</td><td>Up to 9.00%</td></tr>
+                <tr><td>Post Office</td><td>7.50%</td><td>7.50%</td></tr>
+            </table>
+
+            <div class="tip-box">
+                <h3>💡 Smart Strategy</h3>
+                <p><strong>Emergency:</strong> 6-12 months in FD<br>
+                <strong>Short-term:</strong> FD/Debt Funds<br>
+                <strong>Long-term:</strong> Equity MF via SIP<br>
+                <strong>Tax Saving:</strong> ELSS<br>
+                <strong>Income:</strong> SWP from Debt<br>
+                <strong>Retirement:</strong> NPS + MF + FD</p>
+            </div>
+
+            <h3>Power of Starting Early</h3>
+            <p>Amit (25) vs Rohit (35), both till age 60:</p>
+            <ul>
+                <li><strong>Amit:</strong> Invested ₹21L → ₹2.75 Cr</li>
+                <li><strong>Rohit:</strong> Invested ₹15L → ₹80L</li>
+                <li><strong>10 years delay = ₹1.95 CRORE loss!</strong></li>
+            </ul>
+
+            <h3>Action Steps</h3>
+            <ul>
+                <li><strong>1:</strong> KYC (Aadhaar + PAN, 5 min)</li>
+                <li><strong>2:</strong> Download Groww/Zerodha</li>
+                <li><strong>3:</strong> Start SIP ₹500-1000 Index Fund</li>
+                <li><strong>4:</strong> Set financial goals</li>
+                <li><strong>5:</strong> Step-up SIP 10-15% yearly</li>
+                <li><strong>6:</strong> Review yearly, don't panic</li>
+                <li><strong>7:</strong> Keep 6-month emergency in FD</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>🎯 Final Wisdom</h3>
+                <p>Wealth creation is a marathon. Start early, stay consistent. Even ₹500/month for 30 years = ₹35+ lakhs at 12% returns!</p>
+            </div>
+
+            <h3>Final Thoughts</h3>
+            <p>Both FDs and MFs are excellent tools. Use strategically based on goals. Stay disciplined, success will follow!</p>
+        </div>
     </div>
 
 </div>
@@ -241,23 +245,24 @@ if(sessionStorage.getItem('page2Done') !== 'true'){
     window.location.replace('../page2/');
 }
 
+// Button 12 sec baad show (generating text ke baad)
 setTimeout(function(){
     document.getElementById('genSection').style.display = 'none';
     document.getElementById('linkSection').style.display = 'block';
-    document.getElementById('linkSection').scrollIntoView({behavior:'smooth'});
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }, 12000);
 
 function openLink(e){
     e.preventDefault();
     
-    // Smartlink open new tab
+    // Smartlink new tab (1 baar)
     window.open('https://thinkscomparewindow.com/t3hvtigjw?key=c556dd83ba846a18aa5a97344af77336', '_blank');
     
-    // Session clear
+    // Session clear (naya cycle next time)
     sessionStorage.removeItem('page1Done');
     sessionStorage.removeItem('page2Done');
+    sessionStorage.removeItem('popShown');
     
-    // Destination link (yaha apna telegram bot ya final link daal)
     setTimeout(function(){
         window.location.href = 'https://t.me/YourBot';
     }, 1000);
