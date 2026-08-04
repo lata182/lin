@@ -17,7 +17,7 @@
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
         .countdown{font-size:48px;font-weight:800;color:#4ade80;text-align:center;margin:15px 0;text-shadow:0 0 20px rgba(74,222,128,0.5)}
         .wait-text{font-size:15px;color:#94a3b8;text-align:center;margin:10px 0}
-        .ad-space{margin:12px 0;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center;background:#0f0f1e;padding:10px;border-radius:8px;flex-wrap:wrap}
+        .content-box{margin:12px 0;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center;background:#0f0f1e;padding:10px;border-radius:8px;flex-wrap:wrap}
         .loader{border:3px solid #2a2a3e;border-top:3px solid #4ade80;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:15px auto}
         @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         .trust-row{display:flex;justify-content:space-around;flex-wrap:wrap;margin:15px 0;padding:12px;background:#0f0f1e;border-radius:10px}
@@ -33,55 +33,31 @@
         .info-box{background:#0f0f1e;padding:12px;border-radius:8px;margin:12px 0;border-left:3px solid #4ade80}
         .info-box h4{color:#4ade80;font-size:14px;margin-bottom:5px}
         .btn-center{text-align:center;padding:10px 0}
-        
-        /* AdBlock Detection Overlay */
-        .adblock-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px}
-        .adblock-box{background:#1a1a2e;padding:30px 20px;border-radius:15px;max-width:400px;text-align:center;border:2px solid #ef4444;box-shadow:0 0 30px rgba(239,68,68,0.5)}
-        .adblock-icon{font-size:60px;margin-bottom:15px}
-        .adblock-box h2{color:#ef4444;font-size:22px;margin-bottom:12px}
-        .adblock-box p{color:#cbd5e1;font-size:14px;line-height:1.6;margin:10px 0}
-        .adblock-steps{background:#0f0f1e;padding:15px;border-radius:8px;margin:15px 0;text-align:left}
-        .adblock-steps li{color:#94a3b8;font-size:13px;margin:6px 0}
-        .refresh-btn{display:inline-block;padding:12px 30px;background:linear-gradient(135deg,#ef4444,#dc2626);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:15px}
     </style>
 
-    <!-- POPUNDER - 1x only using sessionStorage -->
+    <!-- POPUNDER - Only Page 1, 1x -->
     <script>
-    if(!sessionStorage.getItem('pop1Shown')){
-        sessionStorage.setItem('pop1Shown', 'true');
-        var popScript = document.createElement('script');
-        popScript.src = 'https://thinkscomparewindow.com/26/da/08/26da0863fa4e7e13583d4080e1b980ab.js';
-        document.head.appendChild(popScript);
+    if(!sessionStorage.getItem('popShown')){
+        sessionStorage.setItem('popShown', 'true');
+        setTimeout(function(){
+            var s = document.createElement('script');
+            s.src = 'https://thinkscomparewindow.com/26/da/08/26da0863fa4e7e13583d4080e1b980ab.js';
+            document.head.appendChild(s);
+        }, 1500);
     }
     </script>
 
-    <!-- SOCIAL BAR -->
-    <script src="https://thinkscomparewindow.com/d1/92/11/d192112f6fc8bc1bf77ad7110a7ba038.js"></script>
-
-    <!-- AdBlock Detection Bait -->
-    <script src="https://thinkscomparewindow.com/adblock-detector-fake.js"></script>
+    <!-- SOCIAL BAR - Delayed load (AdBlock bypass) -->
+    <script>
+    setTimeout(function(){
+        var sb = document.createElement('script');
+        sb.src = 'https://thinkscomparewindow.com/d1/92/11/d192112f6fc8bc1bf77ad7110a7ba038.js';
+        document.head.appendChild(sb);
+    }, 2000);
+    </script>
 
 </head>
 <body>
-
-<!-- AdBlock Overlay -->
-<div class="adblock-overlay" id="adblockOverlay">
-    <div class="adblock-box">
-        <div class="adblock-icon">🚫</div>
-        <h2>AdBlock Detected!</h2>
-        <p>We noticed you're using an ad blocker. Our service is free thanks to ads.</p>
-        <p><strong>Please disable AdBlock and refresh the page to continue.</strong></p>
-        <div class="adblock-steps">
-            <strong style="color:#4ade80">How to Disable:</strong>
-            <ul style="margin-top:8px;list-style:none;padding:0">
-                <li>1. Click the AdBlock icon in your browser</li>
-                <li>2. Select "Pause on this site" or "Disable"</li>
-                <li>3. Refresh this page</li>
-            </ul>
-        </div>
-        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh Page</button>
-    </div>
-</div>
 
 <div class="container">
 
@@ -99,19 +75,8 @@
                 <div class="trust-item"><strong>🔒 100%</strong>Safe</div>
             </div>
 
-            <!-- BANNER 300x250 -->
-            <div class="ad-space">
-                <script type="text/javascript">
-                  atOptions = {
-                    'key' : '0359ebfe40ad3d71e104d0c01c5a9b24',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
-            </div>
+            <!-- BANNER 300x250 (delayed) -->
+            <div class="content-box" id="ad-slot-1"></div>
 
             <div class="btn-center">
                 <div id="countdownBox">
@@ -125,25 +90,11 @@
                 </div>
             </div>
 
-            <!-- NATIVE BANNER -->
-            <div class="ad-space">
-                <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
-                <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
-            </div>
+            <!-- NATIVE BANNER (delayed) -->
+            <div class="content-box" id="ad-slot-2"></div>
 
-            <!-- BANNER 320x50 -->
-            <div class="ad-space">
-                <script type="text/javascript">
-                  atOptions = {
-                    'key' : 'a1d0de16e9e5dc1dc7f7384354faa4bf',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://thinkscomparewindow.com/a1d0de16e9e5dc1dc7f7384354faa4bf/invoke.js"></script>
-            </div>
+            <!-- BANNER 320x50 (delayed) -->
+            <div class="content-box" id="ad-slot-3"></div>
         </div>
 
         <div class="content-section">
@@ -181,7 +132,6 @@
                 <li>Use good antivirus</li>
                 <li>Avoid fake download buttons</li>
                 <li>Check file size before downloading</li>
-                <li>Use VPN for extra privacy</li>
             </ul>
         </div>
     </div>
@@ -189,18 +139,7 @@
     <div id="waitSection" style="display:none">
 
         <div class="card">
-            <div class="ad-space">
-                <script type="text/javascript">
-                  atOptions = {
-                    'key' : '0359ebfe40ad3d71e104d0c01c5a9b24',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
-            </div>
+            <div class="content-box" id="ad-slot-4"></div>
 
             <div class="btn-center">
                 <div id="waitBox">
@@ -214,23 +153,8 @@
                 </div>
             </div>
 
-            <div class="ad-space">
-                <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
-                <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
-            </div>
-
-            <div class="ad-space">
-                <script type="text/javascript">
-                  atOptions = {
-                    'key' : 'b905cee804c394ace8e4f8605a0d6598',
-                    'format' : 'iframe',
-                    'height' : 60,
-                    'width' : 468,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://thinkscomparewindow.com/b905cee804c394ace8e4f8605a0d6598/invoke.js"></script>
-            </div>
+            <div class="content-box" id="ad-slot-5"></div>
+            <div class="content-box" id="ad-slot-6"></div>
         </div>
 
         <div class="content-section">
@@ -260,34 +184,45 @@
 </div>
 
 <script>
-// AdBlock Detection
-function detectAdBlock(){
-    var bait = document.createElement('div');
-    bait.innerHTML = '&nbsp;';
-    bait.className = 'adsbox ad-placement adsbygoogle ad-banner ads';
-    bait.style.cssText = 'position:absolute;left:-9999px;height:1px;width:1px';
-    document.body.appendChild(bait);
-    
-    setTimeout(function(){
-        var blocked = false;
-        if(bait.offsetHeight === 0 || bait.offsetParent === null || getComputedStyle(bait).display === 'none'){
-            blocked = true;
-        }
-        // Check if ad scripts loaded
-        if(typeof atOptions === 'undefined' && !document.querySelector('iframe[src*="thinkscomparewindow"]')){
-            blocked = true;
-        }
-        if(blocked){
-            document.getElementById('adblockOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        bait.remove();
-    }, 2000);
-}
-window.addEventListener('load', detectAdBlock);
-
 history.pushState(null, '', location.href);
 window.onpopstate = function(){ history.go(1); };
+
+// Delayed Ad Loading (AdBlock bypass technique)
+function loadAd(slotId, adCode){
+    setTimeout(function(){
+        var slot = document.getElementById(slotId);
+        if(slot){
+            slot.innerHTML = adCode;
+            // Re-execute scripts
+            var scripts = slot.querySelectorAll('script');
+            scripts.forEach(function(oldScript){
+                var newScript = document.createElement('script');
+                if(oldScript.src){
+                    newScript.src = oldScript.src;
+                } else {
+                    newScript.text = oldScript.textContent;
+                }
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+        }
+    }, 2500);
+}
+
+// Banner 300x250
+loadAd('ad-slot-1', `<script type="text/javascript">atOptions={'key':'0359ebfe40ad3d71e104d0c01c5a9b24','format':'iframe','height':250,'width':300,'params':{}};<\/script><script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"><\/script>`);
+
+// Native Banner
+loadAd('ad-slot-2', `<script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"><\/script><div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>`);
+
+// Banner 320x50
+loadAd('ad-slot-3', `<script type="text/javascript">atOptions={'key':'a1d0de16e9e5dc1dc7f7384354faa4bf','format':'iframe','height':50,'width':320,'params':{}};<\/script><script src="https://thinkscomparewindow.com/a1d0de16e9e5dc1dc7f7384354faa4bf/invoke.js"><\/script>`);
+
+// Wait section ads (load when section shows)
+function loadWaitAds(){
+    loadAd('ad-slot-4', `<script type="text/javascript">atOptions={'key':'0359ebfe40ad3d71e104d0c01c5a9b24','format':'iframe','height':250,'width':300,'params':{}};<\/script><script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"><\/script>`);
+    loadAd('ad-slot-5', `<script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"><\/script><div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>`);
+    loadAd('ad-slot-6', `<script type="text/javascript">atOptions={'key':'b905cee804c394ace8e4f8605a0d6598','format':'iframe','height':60,'width':468,'params':{}};<\/script><script src="https://thinkscomparewindow.com/b905cee804c394ace8e4f8605a0d6598/invoke.js"><\/script>`);
+}
 
 var count = 7;
 var timer = setInterval(function(){
@@ -304,6 +239,7 @@ function showWait(){
     document.getElementById('robotSection').style.display = 'none';
     document.getElementById('waitSection').style.display = 'block';
     window.scrollTo({top: 0, behavior: 'smooth'});
+    loadWaitAds();
     
     var waitCount = 10;
     var waitTimer = setInterval(function(){
