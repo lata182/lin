@@ -3,54 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Your Link is Ready - Mutual Funds vs FD</title>
+    <title>Movie Download - Ready! 🎉</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        html,body{width:100%;overflow-x:hidden;background:#f5f5f5}
-        body{font-family:Arial,sans-serif;padding:0}
-        .container{max-width:100%;width:100%;background:white;padding:25px 15px;margin:0 auto}
-        .green-btn{display:inline-block;padding:14px 35px;background:#4CAF50;border:none;color:white;font-size:16px;border-radius:4px;cursor:pointer;text-decoration:none;margin:10px 0}
-        .ad-space{margin:15px 0;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap}
-        .gen-text{font-size:16px;color:#4CAF50;margin:20px 0;text-align:center}
-        .content-section{text-align:left;margin:25px 0;line-height:1.8;word-wrap:break-word}
-        .content-section h2{color:#2E7D32;font-size:22px;margin-bottom:15px}
-        .content-section h3{color:#333;font-size:18px;margin:20px 0 10px}
-        .content-section ul{margin:10px 0 20px 15px}
-        .content-section li{margin:8px 0;color:#444;font-size:14px}
-        .content-section p{margin:15px 0;color:#444;font-size:14px}
-        .content-section img{max-width:100%;height:auto;border-radius:8px;margin:15px 0}
-        .highlight-box{background:#E8F5E9;padding:15px;border-radius:8px;margin:20px 0;border-left:4px solid #4CAF50}
-        .warning-box{background:#FFF3E0;padding:15px;border-radius:8px;margin:20px 0;border-left:4px solid #FF9800}
-        .tip-box{background:#E3F2FD;padding:15px;border-radius:8px;margin:20px 0;border-left:4px solid #2196F3}
-        .comparison-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:13px}
-        .comparison-table th{background:#4CAF50;color:white;padding:10px;text-align:left}
-        .comparison-table td{border:1px solid #ddd;padding:8px}
-        .comparison-table tr:nth-child(even){background:#f9f9f9}
-        .button-section{text-align:center;padding:15px 0}
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+        html,body{width:100%;overflow-x:hidden;background:#0f0f1e;color:#fff;min-height:100vh}
+        .container{max-width:100%;width:100%;padding:15px;margin:0 auto}
+        .progress-wrap{background:#1a1a2e;padding:15px;border-radius:10px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+        .progress-text{text-align:center;color:#4ade80;font-size:14px;margin-bottom:8px;font-weight:600}
+        .progress-bar{width:100%;height:8px;background:#2a2a3e;border-radius:10px;overflow:hidden}
+        .progress-fill{width:100%;height:100%;background:linear-gradient(90deg,#4ade80,#22c55e);border-radius:10px;box-shadow:0 0 15px #4ade80}
+        .card{background:#1a1a2e;padding:20px 15px;border-radius:15px;margin-bottom:15px;box-shadow:0 4px 20px rgba(0,0,0,0.3);border:1px solid #2a2a3e}
+        .btn-real{display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#4ade80,#22c55e);border:none;color:white;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;margin:8px 5px;box-shadow:0 4px 15px rgba(74,222,128,0.4);animation:pulse 2s infinite}
+        .btn-fake{display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border:none;color:white;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;margin:8px 5px;box-shadow:0 4px 15px rgba(139,92,246,0.4)}
+        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+        .countdown{font-size:48px;font-weight:800;color:#4ade80;text-align:center;margin:15px 0;text-shadow:0 0 20px rgba(74,222,128,0.5)}
+        .wait-text{font-size:15px;color:#94a3b8;text-align:center;margin:10px 0}
+        .ad-space{margin:12px 0;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center;background:#0f0f1e;padding:10px;border-radius:8px;flex-wrap:wrap}
+        .loader{border:3px solid #2a2a3e;border-top:3px solid #4ade80;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:15px auto}
+        @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .success-icon{font-size:60px;text-align:center;margin:10px 0;animation:bounce 1s infinite}
+        @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        .trust-row{display:flex;justify-content:space-around;flex-wrap:wrap;margin:15px 0;padding:12px;background:#0f0f1e;border-radius:10px}
+        .trust-item{text-align:center;padding:5px;color:#94a3b8;font-size:12px}
+        .trust-item strong{display:block;color:#4ade80;font-size:16px;margin-bottom:3px}
+        .content-section{padding:15px;background:#1a1a2e;border-radius:12px;margin-top:15px}
+        .content-section h2{color:#4ade80;font-size:20px;margin-bottom:12px}
+        .content-section h3{color:#fbbf24;font-size:16px;margin:15px 0 8px}
+        .content-section p{color:#cbd5e1;font-size:14px;line-height:1.7;margin:10px 0}
+        .content-section ul{margin:10px 0 15px 20px}
+        .content-section li{color:#cbd5e1;font-size:13px;margin:6px 0}
+        .content-section img{max-width:100%;border-radius:8px;margin:12px 0}
+        .info-box{background:#0f0f1e;padding:12px;border-radius:8px;margin:12px 0;border-left:3px solid #4ade80}
+        .info-box h4{color:#4ade80;font-size:14px;margin-bottom:5px}
+        .btn-center{text-align:center;padding:10px 0}
+        .btn-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+        .adblock-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px}
+        .adblock-box{background:#1a1a2e;padding:30px 20px;border-radius:15px;max-width:400px;text-align:center;border:2px solid #ef4444;box-shadow:0 0 30px rgba(239,68,68,0.5)}
+        .adblock-icon{font-size:60px;margin-bottom:15px}
+        .adblock-box h2{color:#ef4444;font-size:22px;margin-bottom:12px}
+        .adblock-box p{color:#cbd5e1;font-size:14px;line-height:1.6;margin:10px 0}
+        .adblock-steps{background:#0f0f1e;padding:15px;border-radius:8px;margin:15px 0;text-align:left}
+        .adblock-steps li{color:#94a3b8;font-size:13px;margin:6px 0}
+        .refresh-btn{display:inline-block;padding:12px 30px;background:linear-gradient(135deg,#ef4444,#dc2626);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:15px}
     </style>
 
-    <!-- POPUNDER - 1x only using sessionStorage check -->
-    <script>
-    if(!sessionStorage.getItem('popShown')){
-        sessionStorage.setItem('popShown', 'true');
-        var popScript = document.createElement('script');
-        popScript.src = 'https://thinkscomparewindow.com/26/da/08/26da0863fa4e7e13583d4080e1b980ab.js';
-        document.head.appendChild(popScript);
-    }
-    </script>
-
-    <!-- SOCIAL BAR -->
+    <!-- SOCIAL BAR (No popunder on page 3) -->
     <script src="https://thinkscomparewindow.com/d1/92/11/d192112f6fc8bc1bf77ad7110a7ba038.js"></script>
 
 </head>
 <body>
 
+<div class="adblock-overlay" id="adblockOverlay">
+    <div class="adblock-box">
+        <div class="adblock-icon">🚫</div>
+        <h2>AdBlock Detected!</h2>
+        <p>We noticed you're using an ad blocker. Our service is free thanks to ads.</p>
+        <p><strong>Please disable AdBlock and refresh to continue.</strong></p>
+        <div class="adblock-steps">
+            <strong style="color:#4ade80">How to Disable:</strong>
+            <ul style="margin-top:8px;list-style:none;padding:0">
+                <li>1. Click AdBlock icon in browser</li>
+                <li>2. Select "Pause on this site"</li>
+                <li>3. Refresh this page</li>
+            </ul>
+        </div>
+        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh Page</button>
+    </div>
+</div>
+
 <div class="container">
+
+    <div class="progress-wrap">
+        <div class="progress-text">🎉 Step 3 of 3 - Almost Done!</div>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+    </div>
 
     <div id="genSection">
 
-        <div class="button-section">
-            <!-- BANNER 300x250 -->
+        <div class="card">
+            <div class="trust-row">
+                <div class="trust-item"><strong>1</strong>✓ Verified</div>
+                <div class="trust-item"><strong>2</strong>✓ Confirmed</div>
+                <div class="trust-item"><strong>3</strong>⏳ Preparing</div>
+            </div>
+
             <div class="ad-space">
                 <script type="text/javascript">
                   atOptions = {
@@ -64,15 +100,17 @@
                 <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
             </div>
 
-            <p class="gen-text">generating your link...</p>
+            <div class="btn-center">
+                <div class="countdown" id="countdown">12</div>
+                <p class="wait-text">🎬 Generating your download link...</p>
+                <div class="loader"></div>
+            </div>
 
-            <!-- NATIVE BANNER -->
             <div class="ad-space">
                 <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
                 <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
             </div>
 
-            <!-- BANNER 320x50 -->
             <div class="ad-space">
                 <script type="text/javascript">
                   atOptions = {
@@ -88,51 +126,32 @@
         </div>
 
         <div class="content-section">
-            <h2>Final Verdict: MF vs FD</h2>
-            <p>After analyzing both options in detail, it's clear that both Fixed Deposits and Mutual Funds serve different purposes in your financial journey.</p>
-            <p>Financial advisors recommend hybrid approach - FDs as safety net, Mutual Funds as wealth creation engine.</p>
-            <p>Inflation is the silent killer of wealth. If investments don't beat 6% inflation, you're losing purchasing power.</p>
-            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600" alt="Investment Success">
+            <h2>🎥 Your Movie Almost Ready!</h2>
+            <p>We're preparing the best quality download link for you. Just a few seconds!</p>
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600" alt="Movie Ready">
 
-            <div class="highlight-box">
-                <h3>🏆 The Winner?</h3>
-                <p><strong>Long-term (5+ years):</strong> Mutual Funds<br>
-                <strong>Short-term safety:</strong> Fixed Deposits<br>
-                <strong>Best:</strong> Use both intelligently!</p>
-            </div>
-
-            <h3>Asset Allocation by Age</h3>
-            <table class="comparison-table">
-                <tr><th>Age</th><th>MF</th><th>FD</th><th>Gold</th></tr>
-                <tr><td>20-30</td><td>75%</td><td>15%</td><td>10%</td></tr>
-                <tr><td>30-40</td><td>65%</td><td>25%</td><td>10%</td></tr>
-                <tr><td>40-50</td><td>55%</td><td>35%</td><td>10%</td></tr>
-                <tr><td>50-60</td><td>35%</td><td>55%</td><td>10%</td></tr>
-                <tr><td>60+</td><td>20%</td><td>70%</td><td>10%</td></tr>
-            </table>
-
-            <h3>Top MF Categories 2025</h3>
+            <h3>📥 What You'll Get</h3>
             <ul>
-                <li><strong>Small Cap:</strong> 18-22% (high risk)</li>
-                <li><strong>Mid Cap:</strong> 15-18%</li>
-                <li><strong>Flexi Cap:</strong> 13-16%</li>
-                <li><strong>Large Cap:</strong> 10-12% (stable)</li>
-                <li><strong>Index Funds:</strong> 10-12% (low cost)</li>
-                <li><strong>ELSS:</strong> 12-14% (tax + growth)</li>
-                <li><strong>Debt Funds:</strong> 6-8%</li>
+                <li><strong>HD Quality:</strong> Up to 1080p Full HD</li>
+                <li><strong>Fast Download:</strong> Max speed servers</li>
+                <li><strong>Direct Link:</strong> No survey required</li>
+                <li><strong>All Formats:</strong> MP4, MKV available</li>
+                <li><strong>Multi Audio:</strong> Hindi + English</li>
             </ul>
 
-            <div class="warning-box">
-                <h3>⚠️ Disclaimer</h3>
-                <p>All returns are historical. Mutual funds subject to market risks. Consult SEBI-registered advisor.</p>
+            <div class="info-box">
+                <h4>💡 While You Wait</h4>
+                <p>Join our Telegram channel for latest updates and requests!</p>
             </div>
         </div>
     </div>
 
-    <div id="linkSection" style="display:none;">
+    <div id="linkSection" style="display:none">
 
-        <div class="button-section">
-            <!-- BANNER 300x250 -->
+        <div class="card">
+            <div class="success-icon">🎉</div>
+            <p class="wait-text" style="color:#4ade80;font-size:18px;font-weight:700;margin-bottom:15px">Your Link is Ready!</p>
+
             <div class="ad-space">
                 <script type="text/javascript">
                   atOptions = {
@@ -146,15 +165,21 @@
                 <script src="https://thinkscomparewindow.com/0359ebfe40ad3d71e104d0c01c5a9b24/invoke.js"></script>
             </div>
 
-            <a href="#" class="green-btn" id="getLinkBtn" onclick="openLink(event)">get your link 🥰</a>
+            <div class="btn-center">
+                <p class="wait-text" style="color:#94a3b8;font-size:13px;margin-bottom:12px">Choose your download quality:</p>
+                <div class="btn-row">
+                    <button class="btn-fake" onclick="fakeClick()">⚡ HD Quality (Fast)</button>
+                </div>
+                <div class="btn-row" style="margin-top:8px">
+                    <a href="#" class="btn-real" onclick="openLink(event)">📥 Get Download Link</a>
+                </div>
+            </div>
 
-            <!-- NATIVE BANNER -->
             <div class="ad-space">
                 <script async="async" data-cfasync="false" src="https://thinkscomparewindow.com/5d78dda9f72ac16230c1b26e2c399248/invoke.js"></script>
                 <div id="container-5d78dda9f72ac16230c1b26e2c399248"></div>
             </div>
 
-            <!-- BANNER 468x60 -->
             <div class="ad-space">
                 <script type="text/javascript">
                   atOptions = {
@@ -168,7 +193,6 @@
                 <script src="https://thinkscomparewindow.com/b905cee804c394ace8e4f8605a0d6598/invoke.js"></script>
             </div>
 
-            <!-- BANNER 160x600 -->
             <div class="ad-space">
                 <script type="text/javascript">
                   atOptions = {
@@ -184,60 +208,56 @@
         </div>
 
         <div class="content-section">
-            <h3>Best FD Rates 2025</h3>
-            <table class="comparison-table">
-                <tr><th>Bank</th><th>Regular</th><th>Senior</th></tr>
-                <tr><td>SBI</td><td>6.50%</td><td>7.00%</td></tr>
-                <tr><td>HDFC</td><td>7.00%</td><td>7.50%</td></tr>
-                <tr><td>ICICI</td><td>7.10%</td><td>7.60%</td></tr>
-                <tr><td>Axis</td><td>7.10%</td><td>7.75%</td></tr>
-                <tr><td>Kotak</td><td>7.10%</td><td>7.60%</td></tr>
-                <tr><td>Small Finance</td><td>Up to 8.50%</td><td>Up to 9.00%</td></tr>
-                <tr><td>Post Office</td><td>7.50%</td><td>7.50%</td></tr>
-            </table>
+            <h3>🎬 Enjoy Your Movie!</h3>
+            <p>Your download link is ready. Click the green button above.</p>
 
-            <div class="tip-box">
-                <h3>💡 Smart Strategy</h3>
-                <p><strong>Emergency:</strong> 6-12 months in FD<br>
-                <strong>Short-term:</strong> FD/Debt Funds<br>
-                <strong>Long-term:</strong> Equity MF via SIP<br>
-                <strong>Tax Saving:</strong> ELSS<br>
-                <strong>Income:</strong> SWP from Debt<br>
-                <strong>Retirement:</strong> NPS + MF + FD</p>
+            <div class="info-box">
+                <h4>📱 Share with Friends</h4>
+                <p>Loved our service? Share our Telegram channel for premium content!</p>
             </div>
 
-            <h3>Power of Starting Early</h3>
-            <p>Amit (25) vs Rohit (35), both till age 60:</p>
+            <h3>⚡ Watch Instructions</h3>
             <ul>
-                <li><strong>Amit:</strong> Invested ₹21L → ₹2.75 Cr</li>
-                <li><strong>Rohit:</strong> Invested ₹15L → ₹80L</li>
-                <li><strong>10 years delay = ₹1.95 CRORE loss!</strong></li>
+                <li>Use MX Player or VLC for best experience</li>
+                <li>Enable subtitles if needed</li>
+                <li>Watch in HD mode for full quality</li>
+                <li>Cast to TV for big screen experience</li>
             </ul>
 
-            <h3>Action Steps</h3>
-            <ul>
-                <li><strong>1:</strong> KYC (Aadhaar + PAN, 5 min)</li>
-                <li><strong>2:</strong> Download Groww/Zerodha</li>
-                <li><strong>3:</strong> Start SIP ₹500-1000 Index Fund</li>
-                <li><strong>4:</strong> Set financial goals</li>
-                <li><strong>5:</strong> Step-up SIP 10-15% yearly</li>
-                <li><strong>6:</strong> Review yearly, don't panic</li>
-                <li><strong>7:</strong> Keep 6-month emergency in FD</li>
-            </ul>
-
-            <div class="highlight-box">
-                <h3>🎯 Final Wisdom</h3>
-                <p>Wealth creation is a marathon. Start early, stay consistent. Even ₹500/month for 30 years = ₹35+ lakhs at 12% returns!</p>
+            <div class="info-box">
+                <h4>💬 Support</h4>
+                <p>Any issue? Message us on Telegram. Reply within 5 minutes!</p>
             </div>
-
-            <h3>Final Thoughts</h3>
-            <p>Both FDs and MFs are excellent tools. Use strategically based on goals. Stay disciplined, success will follow!</p>
         </div>
     </div>
 
 </div>
 
 <script>
+function detectAdBlock(){
+    var bait = document.createElement('div');
+    bait.innerHTML = '&nbsp;';
+    bait.className = 'adsbox ad-placement adsbygoogle ad-banner ads';
+    bait.style.cssText = 'position:absolute;left:-9999px;height:1px;width:1px';
+    document.body.appendChild(bait);
+    
+    setTimeout(function(){
+        var blocked = false;
+        if(bait.offsetHeight === 0 || bait.offsetParent === null || getComputedStyle(bait).display === 'none'){
+            blocked = true;
+        }
+        if(typeof atOptions === 'undefined' && !document.querySelector('iframe[src*="thinkscomparewindow"]')){
+            blocked = true;
+        }
+        if(blocked){
+            document.getElementById('adblockOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        bait.remove();
+    }, 2000);
+}
+window.addEventListener('load', detectAdBlock);
+
 history.pushState(null, '', location.href);
 window.onpopstate = function(){ history.go(1); };
 
@@ -245,23 +265,31 @@ if(sessionStorage.getItem('page2Done') !== 'true'){
     window.location.replace('../page2/');
 }
 
-// Button 12 sec baad show (generating text ke baad)
-setTimeout(function(){
-    document.getElementById('genSection').style.display = 'none';
-    document.getElementById('linkSection').style.display = 'block';
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}, 12000);
+var count = 12;
+var timer = setInterval(function(){
+    count--;
+    document.getElementById('countdown').innerText = count;
+    if(count <= 0){
+        clearInterval(timer);
+        document.getElementById('genSection').style.display = 'none';
+        document.getElementById('linkSection').style.display = 'block';
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+}, 1000);
+
+function fakeClick(){
+    window.open('https://thinkscomparewindow.com/t3hvtigjw?key=c556dd83ba846a18aa5a97344af77336', '_blank');
+}
 
 function openLink(e){
     e.preventDefault();
     
-    // Smartlink new tab (1 baar)
     window.open('https://thinkscomparewindow.com/t3hvtigjw?key=c556dd83ba846a18aa5a97344af77336', '_blank');
     
-    // Session clear (naya cycle next time)
     sessionStorage.removeItem('page1Done');
     sessionStorage.removeItem('page2Done');
-    sessionStorage.removeItem('popShown');
+    sessionStorage.removeItem('pop1Shown');
+    sessionStorage.removeItem('pop2Shown');
     
     setTimeout(function(){
         window.location.href = 'https://t.me/YourBot';
